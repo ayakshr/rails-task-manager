@@ -1,0 +1,20 @@
+<div class="my-container">
+
+<h1>My tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+  <li>
+  <input type="checkbox" value=<%= task.completed ? 1 : 0 %>
+  <%= "checked" if task.completed %> >
+  <%= link_to task.title, "/tasks/#{task.id}" %>
+  </li>
+  <% end %>
+</ul>
+
+<div class="bottom-link">
+  <% add_mark = "+" %>
+  <%= link_to "#{add_mark} Add a new task", '/tasks/new' %>
+</div>
+
+</div>
